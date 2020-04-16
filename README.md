@@ -1,5 +1,5 @@
-#QuéMePongo
+# QuéMePongo
 
-##Diagrama de Clases
+## Diagrama de Clases
 
 ![diagramaDeClases](Diagrama.png)
