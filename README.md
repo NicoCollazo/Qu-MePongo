@@ -2,4 +2,4 @@
 
 ## Diagrama de Clases
 
-![diagramaDeClases](Diagrama.png)
+![diagramaDeClases](DiagramaDeClases.png)
