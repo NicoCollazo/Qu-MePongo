@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.*;
+
 public class Atuendo {
 	private Accesorio accesorio;
 	private ParteSuperior parteSuperior;
@@ -18,6 +20,4 @@ public class Atuendo {
 		if(nuevoCalzado == null) {throw new NullPointerException("El calzado no puede quedar vacío");}
 		calzado = nuevoCalzado;
 	}
-	
-	
 }

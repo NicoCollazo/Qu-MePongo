@@ -1,23 +1,32 @@
 package domain;
+import java.util.List;
+import java.util.ArrayList;
 
-public class Prenda {
-	private enumCategoria categoria; //ACCESORIO, PARTESUPERIOR, PARTEINFERIOR, CALZADO
+public class Prenda implements InterfazPrenda{
 	private String material;
-	private String colorPrincipal;
-	private String colorSecundario;
+	private String colorPrincipal,
+				   colorSecundario;
+	private List<Integer> rangoDeTemperatura = new ArrayList<Integer>();
 	
 	
-	public Prenda(enumCategoria nuevaCategoria, String nuevoMaterial, String nuevoColorPrincipal, String nuevoColorSecundario) {
-		if(nuevaCategoria == null) { throw new NullPointerException("La categoría no puede estar vacía"); }
-		categoria = nuevaCategoria;
+	public Prenda(String nuevoMaterial, String nuevoColorPrincipal, String nuevoColorSecundario, List<Integer> unRangoDeTemperatura) {
 		
-		if(nuevoMaterial == null) { throw new NullPointerException("La categoría no puede estar vacía"); }
+		if(nuevoMaterial == null) { throw new NullPointerException("El material no puede estar vacía"); }
 		material = nuevoMaterial;
 		
-		if(nuevoColorPrincipal == null) { throw new NullPointerException("La categoría no puede estar vacía"); }
+		if(nuevoColorPrincipal == null) { throw new NullPointerException("El color principal no puede estar vacío"); }
 		colorPrincipal = nuevoColorPrincipal;
 		
 		colorSecundario = nuevoColorSecundario;
+		
+		if(unRangoDeTemperatura == null) {throw new NullPointerException("El rango de temperatura no puede estar vacío"); }
+		rangoDeTemperatura = unRangoDeTemperatura;
+	}
+
+
+	@Override
+	public List<Integer> getRangoDeTemperatura() {
+		return rangoDeTemperatura;
 	}
 	
 }
