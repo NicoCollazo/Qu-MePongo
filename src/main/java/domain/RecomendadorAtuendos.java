@@ -2,13 +2,13 @@ package domain;
 
 public class RecomendadorAtuendos {
 	AdapterClima proveedorClima = new ClimaAccuWeather();
-	Integer temperatura = (Integer) proveedorClima.getTemperatura().get("Value");
+	Integer temperatura = proveedorClima.getTemperatura();
 	Integer cantidadDeUsosRestantes = 10;
 	BuilderAtuendo builder = new BuilderAtuendo();
 	
 	public boolean checkearTemperatura(InterfazPrenda unaPrenda) {
-		return     temperatura > unaPrenda.getRangoDeTemperatura().get(0) 
-				&& temperatura < unaPrenda.getRangoDeTemperatura().get(1);
+		return     temperatura >= unaPrenda.getRangoDeTemperatura().get(0) 
+				&& temperatura <= unaPrenda.getRangoDeTemperatura().get(1);
 	}
 	
 	public void sugerirAccesorio(Accesorio unaPrenda) {

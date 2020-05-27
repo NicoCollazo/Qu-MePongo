@@ -8,7 +8,10 @@ public class ClimaAccuWeather implements AdapterClima{
 	AccuWeatherAPI APIclima = new AccuWeatherAPI();
 	List<Map<String, Object>> condicionesClimaticas = APIclima.getWeather("Buenos Aires, Argentina"); 
 	
-	public HashMap<String, Object> getTemperatura() {
-		return (HashMap<String, Object>) condicionesClimaticas.get(0).get("Temperature");
+	public int getTemperatura() {
+		HashMap<String, Object> temperaturaActual = (HashMap<String, Object>) condicionesClimaticas.get(0).get("Temperature");
+		Integer gradosFarenheit = (int)temperaturaActual.get("Value"); 
+		
+		return gradosFarenheit - 32; //Resto 32 para que sea en Celsius
 	}
 }
