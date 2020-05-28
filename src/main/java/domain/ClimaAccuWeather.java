@@ -10,8 +10,12 @@ public class ClimaAccuWeather implements AdapterClima{
 	
 	public int getTemperatura() {
 		HashMap<String, Object> temperaturaActual = (HashMap<String, Object>) condicionesClimaticas.get(0).get("Temperature");
-		Integer gradosFarenheit = (int)temperaturaActual.get("Value"); 
+		Integer grados = (int)temperaturaActual.get("Value"); 
 		
-		return gradosFarenheit - 32; //Resto 32 para que sea en Celsius
+		if(((String)temperaturaActual.get("Unit")).equals("F")) {
+			return grados - 32; //Resto 32 para que sea en Celsius			
+		}
+		
+		return grados;
 	}
 }
