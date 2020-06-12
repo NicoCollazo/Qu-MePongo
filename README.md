@@ -6,4 +6,4 @@
 
 ## QuéMePongo - Diagrama Iteración 6
 
-![diagramaI6](Diagrama QMP6.png)
+![diagramaI6](DiagramaQMP6.png)
